@@ -79,7 +79,7 @@ section#box1>p:nth-child(2) {
 }
 
 section#box1>p:nth-child(4) {
-    /* background-color: aqua; */
+    background-color: #666;
 }
 
 section#box1>p:nth-child(5) {
@@ -109,13 +109,17 @@ section#box2 {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
 }
-
+section#box2 > p:nth-child(2){
+    background-image: url(./images/w1.jpg);
+  }
 section#box2>p:nth-child(3) {
     grid-column: 3 / 5;
+    font-size: 3rem;
 }
 
 section#box2>p:nth-child(4) {
     grid-row: 2 / 4;
+    background-image: url(../images/grid-images/w2.jpg);
 }
 
 section#box2>p:nth-child(5) {
