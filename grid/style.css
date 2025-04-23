@@ -6,8 +6,30 @@ body {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+    perspective: 900px;
+    background-color: #222;
 }
-#menu-icon{
+
+input {
+    position: fixed;
+    z-index: 15;
+}
+input{
+    display: none;
+}
+
+input[id=check-icon]:checked~nav {
+    transform: rotateY(0deg);
+    opacity: 1;
+
+}
+
+input[id=check-icon]:checked~main {
+    transform: rotateY(-10deg);
+}
+
+#menu-icon {
+    cursor: pointer;
     font-size: 2rem;
     position: fixed;
     z-index: 10;
@@ -16,19 +38,70 @@ body {
     color: #fff;
     animation: icon-move 0.5s infinite alternate;
 }
+
 @keyframes icon-move {
-    0%{
+    0% {
         transform: scale(1);
     }
-    100%{
+
+    100% {
         transform: scale(1.5);
     }
 }
+
+/****nav***/
+input[id=menu1]:checked~main>#box1,
+input[id=menu2]:checked~main>#box2,
+input[id=menu3]:checked~main>#box3
+{
+opacity: 1;
+}
+input[id=menu1]:checked ~ main > #box1 > p,
+input[id=menu2]:checked ~ main > #box2 > p,
+input[id=menu3]:checked ~ main > #box3 > p{
+    transform: rotateY(0deg);
+}
+nav {
+    width: 150px;
+    height: 100%;
+    position: absolute;
+    background-color: #ddd;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    transform: rotateY(120deg);
+    transform-origin: left center;
+    opacity: 0;
+    transition: all 1s;
+
+}
+
+nav>img {
+    display: block;
+    width: 60%;
+    margin: 7rem auto;
+}
+
+nav>ul>li {
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 1.5rem;
+
+}
+
+nav>ul>li>label {
+    cursor: pointer;
+}
+
 /***main***/
 main {
     /* height: 100%; */
-    height: auto; /* 고정 높이 제거 */
+    height: auto;
+    /* 고정 높이 제거 */
     position: relative;
+    transform: rotateY(0deg);
+    transform-origin: right center;
+    transition: all 1s;
 }
 
 main>section {
@@ -37,17 +110,22 @@ main>section {
     display: grid;
     position: absolute;
     top: 0;
-    left: 0;
-     */
+    left: 0; */
 
-     width: 100%;
-    min-height: 100vh; /* 화면 높이만큼 차지 */
+
+    width: 100%;
+    min-height: 100vh;
+    /* 화면 높이만큼 차지 */
     display: grid;
-    position: relative; /* absolute → relative로 변경 */
-    top: auto; /* 초기화 */
-    left: auto; /* 초기화 */
+    position: absolute;
+    /* absolute → relative로 변경 */
+    top:0;
+    /* 초기화 */
+    left: 0;
+    /* 초기화 */
     margin: 0;
     padding: 0;
+    opacity: 0;
 }
 
 
@@ -61,12 +139,15 @@ main>section>p {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    transform: rotateY(180deg);
+    transition: all 1s;
+    
 }
 
 section#box1 {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    
+
 }
 
 section#box1>p:nth-child(1) {
@@ -109,9 +190,11 @@ section#box2 {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
 }
-section#box2 > p:nth-child(2){
+
+section#box2>p:nth-child(2) {
     background-image: url(./images/w1.jpg);
-  }
+}
+
 section#box2>p:nth-child(3) {
     grid-column: 3 / 5;
     font-size: 3rem;
@@ -131,9 +214,11 @@ section#box2>p:nth-child(5) {
 section#box2>p:nth-child(6) {
     background-image: url(../images/grid-images/w4.jpg);
 }
+
 section#box2>p:nth-child(10) {
     background-image: url(../images/grid-images/w6.jpg);
 }
+
 section#box2>p:nth-child(11) {
     background-image: url(../images/grid-images/w7.jpg);
 }
@@ -142,7 +227,7 @@ section#box2>p:nth-child(11) {
 section#box3 {
     grid-template-columns: repeat(4, 1fr);
     grid-template-areas:
-     "kid1 kid1 text1 kid2"
+        "kid1 kid1 text1 kid2"
         "kid1 kid1 text2 text2"
         "kid1 kid1 kid3 text3"
         "kid1 kid1 kid3 kid4";
@@ -153,7 +238,7 @@ section#box3>p:nth-child(1) {
     background-image: url(../images/grid-images/k1.jpg);
 }
 
-section#box3> p:nth-child(2) {
+section#box3>p:nth-child(2) {
     grid-area: text1;
     background-color: #555;
 }
@@ -180,6 +265,5 @@ section#box3>p:nth-child(6) {
 
 section#box3>p:nth-child(7) {
     grid-area: kid4;
-    background-image: url(../images/grid-images/k4.jpg);}
-
-  
+    background-image: url(../images/grid-images/k4.jpg);
+}
