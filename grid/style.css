@@ -26,17 +26,30 @@ body {
 }
 /***main***/
 main {
-    height: 100%;
+    /* height: 100%; */
+    height: auto; /* 고정 높이 제거 */
+    position: relative;
 }
 
 main>section {
-    width: 100%;
+    /* width: 100%;
     height: 100%;
     display: grid;
     position: absolute;
     top: 0;
     left: 0;
+     */
+
+     width: 100%;
+    min-height: 100vh; /* 화면 높이만큼 차지 */
+    display: grid;
+    position: relative; /* absolute → relative로 변경 */
+    top: auto; /* 초기화 */
+    left: auto; /* 초기화 */
+    margin: 0;
+    padding: 0;
 }
+
 
 main>section>p {
     font-size: 2rem;
@@ -53,6 +66,7 @@ main>section>p {
 section#box1 {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
+    
 }
 
 section#box1>p:nth-child(1) {
@@ -65,7 +79,7 @@ section#box1>p:nth-child(2) {
 }
 
 section#box1>p:nth-child(4) {
-    background-color: aqua;
+    /* background-color: aqua; */
 }
 
 section#box1>p:nth-child(5) {
