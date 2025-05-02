@@ -1,0 +1,256 @@
+body {
+  line-height: 1.5;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+.main-header {
+  position: relative;
+  width: 100%;
+}
+
+.header-img {
+  width: 100%;
+  height: 300px;
+}
+
+.header-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding: 0 30px 20px;
+}
+
+.logo-image {
+  width: 250px;
+  height: auto;
+  margin-bottom: 0px;
+  -webkit-transform: translateX(205%) translateY(-50%);
+          transform: translateX(205%) translateY(-50%);
+}
+
+.slogan {
+  color: #ddd;
+  text-align: right;
+  font-size: 16px;
+  line-height: 1.4;
+  -webkit-transform: translateY(-400%);
+          transform: translateY(-400%);
+}
+
+.category-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px 15px;
+  margin: 15px 0;
+}
+
+.category-button {
+  background-color: #f0f0f0;
+  text-align: center;
+  padding: 8px 15px;
+  border-radius: 5px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  margin: 0 5px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+.category-button:hover {
+  background-color: #cfebe2;
+}
+
+.countries {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0px 25px;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.country-card {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.country-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 8px;
+}
+
+.country-card h4 {
+  color: #2b6653;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+.country-card h4:hover {
+  background-color: #cfebe2;
+}
+
+.country-card p {
+  font-size: 12px;
+  color: #666;
+}
+
+.theme {
+  padding: 0 15px;
+  margin-bottom: 30px;
+  background-color: rgb(227, 233, 216);
+  padding: 10px;
+  border: 1px solid rgb(227, 233, 216);
+  border-radius: 30px;
+}
+
+.theme > p {
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.theme-subtitle {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.theme-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 15px;
+}
+
+.theme-card {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.theme-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 8px;
+}
+
+.theme-card p {
+  font-size: 12px;
+  color: #666;
+}
+
+.peoples {
+  padding: 0 15px;
+  margin-bottom: 30px;
+}
+
+.peoples-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.peoples-card img {
+  width: 120px;
+  height: auto;
+  border-radius: 5px;
+  margin-right: 15px;
+}
+
+.peoples-text {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.peoples-card h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.peoples-card p {
+  font-size: 12px;
+  color: #666;
+}
+
+.footer-bar {
+  background-color: #e8f5e9;
+  padding: 15px 0;
+}
+
+.footer-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 30px;
+}
+
+.footer-logo img {
+  width: 200px;
+  margin-bottom: -50px;
+  -webkit-transform: translateY(-40%);
+          transform: translateY(-40%);
+}
+
+.footer-info {
+  font-size: 11px;
+  color: #666;
+  line-height: 1.4;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+.footer-right {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: right;
+  font-size: 12px;
+}
+
+.footer-right h3 {
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.footer-right p {
+  font-size: 11px;
+  color: #666;
+}/*# sourceMappingURL=style.css.map */
