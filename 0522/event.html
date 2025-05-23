@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트와 이벤트 처리</title>
+</head>
+<body>
+    <!-- <button onclick="eventClick()">클릭!</button> -->
+     <button>클릭!</button>
+    <script>
+        // const $btn = document.querySelector('button');
+        // const eventClick = ()=>{
+        //     alert("onclick 속성 실행");
+        // }
+        // const eventTwo = ()=>{
+        //     console.log('클릭하면 로고로 남김');
+        // }
+        // $btn.onclick = eventClick;
+        // $btn.onclick = eventTwo
+        // $btn.addEventListener('click',eventClick);
+        // $btn.addEventListener('click',eventTwo);
+
+        // $btn.addEventListener('click',(event));
+        // console.log(event);
+      
+
+        //키보드 이벤트
+        const $body = document.body;
+        $body.addEventListener("keypress",(e)=>{
+            console.log(e.key);
+        });
+
+        //마우스 오른쪽 버튼 클릭
+        document.addEventListener("contextmenu",(e)=>{
+            e.preventDefault();
+            console.log("마우스 오른쪽 버튼 클릭");
+        });
+
+    </script>
+</body>
+</html>

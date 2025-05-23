@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>끝말잇기 게임</title>
+    <style>
+        .view{
+            display:  none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="start">
+        <input type="text" id="start-word">
+        <button>시작</button>
+    </div>
+    <div class="view">
+    <p>제시어</p>
+    <div>
+        <span>낱말 입력</span>
+        <input type="text" id="word" placeholder="낱말을 입력하세요">
+        <button id="btn-input">입력</button>
+    </div>
+    <ul id="wordlist"> </ul>
+    </div>
+    <script>       
+       //객체 가져오기
+        const $input = document.querySelector('#word');
+        const $btn = document.querySelector('#btn-input');
+        const $p = document.querySelector("p");
+        const $list = document.querySelector("#wordlist");
+        const $startBtn = document.querySelector(".start>button");
+           
+        //p태그의 textContent를 변경
+        const changePcontent = ()=>{
+        const $p = document.querySelector("p");
+        $p.textContent=`제시어: ${elem}`;
+        }
+        const createli = (keyword)=>{
+            const elemLi = document.createElement("li")
+                elemLi.textContent = elem;
+                $list.appendChild(elemLi);
+        }
+        /**
+         * 시작 버튼을 누르면 입력값이 있는지 확인하고 
+         * 있으면 ul(#wordlist)에 추가
+          */
+        const handleStartBtn = ()=>{
+            const elem = document.querySelector("#start-word").value;
+            if (elem !== ''){
+                const elemLi = document.createElement("li")
+                elemLi.textContent = elem;
+                $list.appendChild(elemLi);
+                $p.textContent=`제시어: ${elem}`;
+                //
+                const $view = document.querySelector('.view');
+                $view.style.display = "block";
+                const $start = document.querySelector(".start");
+                $start.style.display = "none";
+                changePcontent(elem);
+            }else {
+                alert("낱말을 입력하세요");
+                return;
+            }
+        }
+        $startBtn.addEventListener("click", handleStartBtn)
+        
+
+        //맞는 낱말인지 체크
+        const handleWordInput = ()=>{
+            const keyword = $input.value.trim();
+            if(keyword === ''){
+                alert("낱말을 입력하세요");
+                return
+            }
+            //이전 입력 문자
+            const last = $list.lastElementChild.textContent;
+            const lastword = last[last.length-1];
+            const firstword =keyword[0];
+            //올바르게 입력되었는지 체크
+            if(lastword === firstword){
+                //끝말 잇기 성공
+                // $p.textContent=`제시어: ${keyword}`;
+                changePcontent(keyword);
+                //ul > li로 추가
+                const elem = document.createElement("li");
+                elem.textContent = keyword;
+                $list.appendChild(elem);
+
+            } else{
+                //끝말잇기 실패
+                alert(`틀렷어요. ${lastword}시작해야 합니다`)
+            }
+            $input.value='';
+            $input.focus();
+
+        }
+        $btn.addEventListener("click", handleWordInput);
+        $input.addEventListener("keydown",(e)=>{
+            if(e.key === 'Enter'){
+                handleWordInput();
+            }
+        })
+
+        
+    </script>
+</body>
+
+</html>

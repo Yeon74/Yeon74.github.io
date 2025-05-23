@@ -1,0 +1,144 @@
+*{margin: 0; padding: 0;}
+
+/* 기본 설정 */
+body {
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* 공통 컨테이너 스타일 */
+.container, .container2 {
+    width: 350px;
+    text-align: center;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    background-color: #F2F5C6;
+    height: 60%;
+}
+
+/* 제목 스타일 */
+h1 {
+    text-align: center;
+    margin: 2rem;
+}
+
+/* 단어 흐름 레이아웃 */
+.word-flow {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.word-box {
+    background-color: #CAF2CB;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.h-flow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.v-flow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.arrow {
+    font-size: 20px;
+}
+
+.arrow-h {
+    margin: 0 10px;
+}
+
+.arrow-v {
+    margin: 5px 0;
+}
+
+/* 게임 이미지 */
+.game {
+    width: 80px;
+    margin: 10px 0;
+}
+
+/* 입력 필드 및 버튼 스타일 */
+input[type="text"], button {
+    padding: 10px;
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #F3D8F1;
+    text-align: center;
+    font-size: 14px;
+    box-sizing: border-box;
+    display: block;
+    margin: 1rem auto;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+/* 두 번째 화면 */
+.container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+/* 채팅 영역 */
+.chat-area, .chat-area-reverese {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.chat-area {
+    justify-content: flex-start;
+    max-height: 200px;
+    overflow: auto;
+}
+
+.chat-area-reverese {
+    justify-content: flex-end;
+}
+
+.chat-area-reverese > .chat-bot {
+    background-color: #8BE4C5;
+}
+
+/* 아바타 및 채팅 메시지 스타일 */
+.avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #D3D3D3;
+    flex-shrink: 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.chat-bot {
+    width: 200px;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: #FA9F9F;
+    font-size: 14px;
+    height: 25px;
+}
