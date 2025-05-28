@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>간단한 이미지 슬라이드</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .slider{
+            width: 300px;
+            overflow: hidden;
+        }
+        .track{
+            width: 900px;
+            display: flex;
+        }
+        .track > img{
+            width: 300px;
+            opacity: 0.3;
+            transition: opacity 1s;
+        }
+        .track > img.active{
+            opacity: 1;
+        }
+        button{
+            position: relative;
+            z-index: 10;
+        }
+        
+    </style>
+</head>
+<body>
+    <button class="prev">◀ 이전 </button>
+    <div class="slider">
+        <div class="track">
+            <img src="./images/img-1.png" alt="이미지1" class="active">
+            <img src="./images/img-2.png" alt="이미지2">
+            <img src="./images/img-3.png" alt="이미지3">
+        </div>
+    </div>
+           
+    <button class="next">다음 ▶</button>
+       
+    <script>
+        const $track = document.querySelector(".track");
+        const $imgs =document.querySelectorAll(".track>img");
+        // const $btn = document.querySelector("button");
+        const sliderCount = $imgs.length;
+        const slideWidth = 300;
+        let index = 0;
+
+        const updateImages = ()=>{
+            $imgs.forEach(()=>{
+                elem.classList.remove("active");
+            });
+            $imgs[index].classList.add("active");
+            $track.style.transform = `translateX(-${index*slideWidth}px)`;
+        }
+
+        document.querySelector("button.next").addEventListener("click",()=>{
+            //이전 active class를 가진 걸 삭제
+            $imgs[index].classList.remove("active");
+            index++;
+            if(index >= sliderCount){
+                index = 0;
+            }
+            $imgs[index].classList.add("active");
+            $track.style.transform = `translateX(-${index*slideWidth}px)`;
+        });
+        //이전버튼
+        document.querySelector("button.prev").addEventListener("click",()=>{
+            // $imgs[index].classList.remove("active");
+            index--;
+            if(index < 0){
+                index = sliderCount-1;
+            }
+            $imgs[index].classList.add("active");
+            $track.style.transform = `translateX(-${index*slideWidth}px)`;
+
+        })
+    </script>
+</body>
+</html>

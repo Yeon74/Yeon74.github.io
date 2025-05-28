@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 따라 다니기</title>
+    <style>
+        *{margin: 0; padding: 0}
+        .cursor{
+            width: 10px;
+            height: 10px;
+            background-color: tomato;
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor"></div>
+    <script>
+        const $cursor = document.querySelector(".cursor");
+        document.addEventListener("mousemove",(e)=>{
+           // console.dir(e); clientX, clientY
+           $cursor.style.top = `${e.clientY}px`;
+           $cursor.style.left = `${e.clientX}px`;
+
+        })
+    </script>
+</body>
+</html>

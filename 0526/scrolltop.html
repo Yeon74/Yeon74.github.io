@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤 시 상단 네비게이션 고정/숨김</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        body{
+            height: 400vh;
+        }
+        a{
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            padding: 1rem 0;
+        }
+        ul{
+            background-color: #222;
+            color: #eee;
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+        }
+        header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            transition: top 0.5s;
+        }
+        .top{
+            width: 50px;
+            height: 50px;
+            background-color: tomato;
+            color: #eee;
+            text-align: center;
+            line-height: 50px;
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <ul>
+            <li> <a href="#">메뉴1</a></li>
+            <li> <a href="#">메뉴2</a></li>
+            <li> <a href="#">메뉴3</a></li>
+            <li> <a href="#">메뉴4</a></li>
+        </ul>
+    </header>
+    <div class="top"></div>
+    <script>
+        const $header = document.querySelector("header")
+        window.addEventListener("scroll",()=>{
+            //제일 상단위에 올라가면 ; scrollY;0
+            if(window.scrollY <=0){
+                $header.style.top = "-100px";
+            } else {
+                $header.style.top = "0";
+            }
+        });
+        document.querySelector(".top").addEventListener("click", ()=>{
+            window.scrollTo({top:0, behavior: "smooth"});
+        })
+    </script>
+    
+</body>
+</html>

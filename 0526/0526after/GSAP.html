@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <title>GSAP 사용</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: tomato;
+        }
+    </style>
+</head>
+
+<body>
+    <!--gsap.to,:  현재 상태 -> 원하는 상태)클래스, ID)
+     gsap.from,: 어떤 상태에서 시작해서 원래 상태로 돌아옴
+      gsap.fromTo : 처음 값과 마지막 값을 지정해서 사용-->
+    <div class="box"></div>
+    <script>
+        //단위는 px 초가 기본
+        //첫번째 인자: "selector"
+        //두번째 인자: array of object
+        // gsap.to(".box", {
+        //     x: 200,
+        //     y: 500,
+        //     backgroundColor: "aqua",
+        //     duration: 1
+        // });
+
+        //1초 뒤, 투명도 0.5로 줄이기
+        // gsap.to(".box", {
+        //     opacity: 0.5,
+        //     delay:1,
+        //     duration: 1
+        // })
+
+        //
+        // gsap.from(".box",{
+        //     x:300,
+        //     opacity: 0.3,
+        //     duration: 2,
+        //     delay: 1
+        // });
+
+        // gsap.fromTo(".box", { x: 100, opacity: 0.3 }, 
+        // { x: 800, opacity: 1, duration: 2 });
+
+        //trasition 이동, (x,y) rotate: rotation, scale: scale
+        // gsap.to(".box",{
+        //     x:500,
+        //     y:500,
+        //     rotation: 45,
+        //     scale:1.5,
+        //     duration: 2
+        // });
+
+        //repeat, yoyo, delay, pnComplete(): 애니메이션이 종료되면 실행
+        // gsap.to(".box",{
+        //     x:500,
+        //     repeat: 3,
+        //     yoyo: true,
+        //     delay:1,
+        //     duration: 2,
+        //     onComplete: ()=>{
+        //         alert("애니메이션 끝!!");
+        //     }
+        // });
+
+        gsap.to(".box",{
+            backgroundColor:"black",
+            duration: 1
+        });
+    </script>
+</body>
+
+</html>

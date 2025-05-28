@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션 이동</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: tomato;
+            transition: all 0.5s;
+        }
+
+        .move {
+            transform: translateX(200px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <button>이동</button>
+    <script>
+        const $btn = document.querySelector("button");
+
+        const $box = document.querySelector(".box");
+        let posX = 0;
+        $btn.addEventListener("click", () => {
+            //tramsform, transition
+            // $box.style.transform = "translateX(200px)";
+            // $box.style.transition = "all 0.5s";
+            // $box.classList.toggle("move");  //add, remove 가 번갈아가면서 실행
+            if (posX <= 800) {
+                posX += 200;  //posX =posX+200
+                $box.style.transform = `translateX(${posX}px)`;
+            }
+        });
+    </script>
+</body>
+
+</html>
